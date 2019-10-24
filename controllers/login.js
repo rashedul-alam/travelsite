@@ -23,9 +23,11 @@ router.post('/', function(request, response) {
                 response.redirect('/adminhome');
             } else if (request.body.type == 'scout') {
                 console.log("scot");
+                response.redirect('/scouthome');
 
             } else if (request.body.type == 'guser') {
                 console.log("guser");
+                response.redirect('/guserhome');
 
             }
 

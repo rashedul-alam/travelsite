@@ -7,8 +7,11 @@ var ejs = require('ejs');
 var login = require('./controllers/login');
 var signup = require('./controllers/signup');
 var adminhome = require('./controllers/adminhome');
-
+var scouthome = require('./controllers/scouthome');
+var guserhome = require('./controllers/guserhome');
+var logout = require('./controllers/logout');
 var app = express();
+
 //CONFIGURATION
 app.set('view engine', 'ejs');
 
@@ -21,6 +24,9 @@ app.use('/abc', express.static('xyz'));
 app.use('/login', login);
 app.use('/signup', signup);
 app.use('/adminhome', adminhome);
+app.use('/scouthome', scouthome);
+app.use('/guserhome', guserhome);
+app.use('/logout', logout);
 
 //ROUTER
 app.get('/', function(request, response) {
