@@ -5,6 +5,8 @@ var expSession = require('express-session');
 var cookieParser = require('cookie-parser');
 var ejs = require('ejs');
 var login = require('./controllers/login');
+var signup = require('./controllers/signup');
+var adminhome = require('./controllers/adminhome');
 
 var app = express();
 //CONFIGURATION
@@ -15,9 +17,10 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expSession({ secret: 'my top secret value', saveUninitialized: true, resave: false }));
 app.use(cookieParser());
-app.use('/abc', express.static('xyz'))
+app.use('/abc', express.static('xyz'));
 app.use('/login', login);
-
+app.use('/signup', signup);
+app.use('/adminhome', adminhome);
 
 //ROUTER
 app.get('/', function(request, response) {
