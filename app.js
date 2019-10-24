@@ -4,8 +4,9 @@ var bodyParser = require('body-parser');
 var expSession = require('express-session');
 var cookieParser = require('cookie-parser');
 var ejs = require('ejs');
+var login = require('./controllers/login');
 
-
+var app = express();
 //CONFIGURATION
 app.set('view engine', 'ejs');
 

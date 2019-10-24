@@ -14,8 +14,8 @@ module.exports = {
         });
     },
     validate: function(user, callback) {
-        var sql = "select * from user where username=? and password=?";
-        db.getResults(sql, [user.username, user.password], function(result) {
+        var sql = "select * from user where username=? and password=? and type=?";
+        db.getResults(sql, [user.username, user.password, user.type], function(result) {
 
             if (result.length > 0) {
                 callback(true);
