@@ -44,6 +44,12 @@ router.post('/adduser', function(request, response) {
     });
 
 });
+router.get('/userList', function(request, response) {
+    console.log("userlist");
+    userModel.getAll(function(results) {
+        response.render('adminhome/userlist', { users: results });
+    });
+});
 
 
 
